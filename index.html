@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFTron WebViewer</title>
+</head>
+<body>
+    <div id="viewer" style="width: 100%; height: 100vh;"></div>
+    <script src="lib/webviewer.min.js"></script>
+    <script>
+        WebViewer({
+            path: 'lib', // path to the WebViewer library
+            initialDoc: 'https://pdftron.s3.amazonaws.com/downloads/pl/demo-annotated.pdf', // path to your initial document
+            licenseKey: 'demo:1719840779634:7f8983b60300000000f10391a98ffb635cf819033faf2da11943dff28d',
+            enableMeasurement: true
+        }, document.getElementById('viewer'))
+        .then(instance => {
+            // you can now call WebViewer APIs here...
+            //instance.UI.enableFeatures([instance.Feature.Measurement]);
+        });
+    </script>
+</body>
+</html>
